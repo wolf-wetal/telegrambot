@@ -28,7 +28,8 @@ class Request
         }
 
         if ($param_Lead) {
-            $url = $website . $param_Lead . http_build_query($params);
+            $url = $website . $param_Lead;
+                $url = $url . http_build_query($params);
         }
 
         $ch = curl_init($url);

@@ -15,7 +15,9 @@ $leads = new ApiLeads('http://api.leads.su/webmaster','ecf17c85e3179028e287eb511
 
 //$getTelegram = $telegram->setRequest('test');
 
-$getCountry = $leads->getCountries(50, 0, true, 10);
+//$getCountry = $leads->getCountries(50, 0, true, 10);
 
-var_dump($getCountry);die();
 
+$getIdName = $leads->getIdName();
+
+    var_dump($getIdName);die();

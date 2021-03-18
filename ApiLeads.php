@@ -62,4 +62,19 @@ class ApiLeads
 
     }
 
+    public function getIdName(){
+        $request = new Request($this->website, $this->token, '');
+        $param = '/account?';
+        $params = [
+            'token'=> $this->token,
+        ];
+        $result = $request->request($params, '', $param);
+
+        $result = json_decode($result, true);
+
+        return [ 'id' =>$result['data']['id'], 'name' => $result['data']['name']];
+
+    }
+
+
 }
