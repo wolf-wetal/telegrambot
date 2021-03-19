@@ -18,8 +18,9 @@ class Telegram
         $request = new Request($this->website, $this->token, $this->chat_id);
         $param = '/sendMessage';
         $params = [
-            'chat_id'=> $this->chat_id,
-            'text'   => $data,
+            'chat_id'    => $this->chat_id,
+            'text'       => $data,
+            'parse_mode' => 'html',
         ];
 
         $result = $request->request($params,$param, '');
