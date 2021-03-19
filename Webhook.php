@@ -11,10 +11,11 @@ $leads = new ApiLeads('http://api.leads.su/webmaster','ecf17c85e3179028e287eb511
 
 if (trim($arr['message']['text']) == '/getCountry') {
     $getCountry = $leads->getCountries(50, 0, true, 10);
-    foreach ($getCountry as $country) {
+/*    foreach ($getCountry as $country) {
         $telegram->setRequest($country['id']);
         $telegram->setRequest($country['name']);
-    }
+    }*/
+    $telegram->setRequest($getCountry);
 
 }
 if (trim($arr['message']['text']) == '/getAccount') {
@@ -23,3 +24,4 @@ if (trim($arr['message']['text']) == '/getAccount') {
     $telegram->setRequest($getIdName['name']);
 
 }
+
